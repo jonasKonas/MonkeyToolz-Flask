@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Build Room configurations
+{% endblock %}
+
+{% block content %}
+
+        
+<form action="/bsout" method="POST">
+    <div class="mb-3">
+        <label for="buildOutput" class="form-label">Email address</label>
+        <input name="buildOutput" type="text" class="form-control">
+    </div>
+    <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock %}

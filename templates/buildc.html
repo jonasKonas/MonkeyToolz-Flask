@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Build Room configurations
+{% endblock %}
+
+{% block content %}
+
+        
+<div class="output-container align-items-center mt-2">
+    <div class="config-box col">
+        <p>Configuration for: 
+            <br>
+            <b>
+                {{  ci_name }} {{ supplier }} {{ part_number }}
+            </b>
+            <br>Required Firmware: {{ oper_s }}
+        <p>
+    </div>     
+</div>
+<div class="output-container align-items-center mt-2">
+    <textarea id="config-output"class="form-control outputbox" aria-label="With textarea">
+        {{ confOut }}
+    </textarea>    
+</div>
+
+
+
+
+
+{% endblock %}
