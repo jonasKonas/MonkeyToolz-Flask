@@ -6,23 +6,41 @@ Build Room configurations
 
 {% block content %}
 
-        
-<div class="output-container align-items-center mt-2">
+<div class="container">        
+    <div class="output-container align-items-center mt-2 ps-3">
+        <div class="config-box col">
+            <p>Configuration for: 
+                <br>
+                <b>
+                    {{  ci_name }} {{ supplier }} {{ part_number }}
+                </b>
+                <br>Required Firmware: {{ oper_s }}
+            <p>
+        </div>     
+    </div>
+</div>
+
+
+
+<div class="output-container row align-items-center mt-5">
     <div class="config-box col">
-        <p>Configuration for: 
-            <br>
-            <b>
-                {{  ci_name }} {{ supplier }} {{ part_number }}
-            </b>
-            <br>Required Firmware: {{ oper_s }}
-        <p>
-    </div>     
-</div>
-<div class="output-container align-items-center mt-2">
-    <textarea id="config-output"class="form-control outputbox" aria-label="With textarea">
-        {{ confOut }}
-    </textarea>    
-</div>
+        <div class="input-group">
+            <span class="input-group-text copy-span"><button class="btn-sm btn-secondary copyBtn" type="button" id="copy-conf-btn">Config</button></span>
+            <textarea id="config-output"class="form-control outputbox" aria-label="With textarea">
+                {{ confOut }}
+            </textarea>
+        </div>
+        
+    </div>
+    <div class="email-box col-4">
+        <div class="input-group">
+            <span class="input-group-text copy-span"><button class="btn-sm btn-secondary copyBtn"  id="copy-email-btn">Email</button></span>
+            <textarea id="email-output" class="form-control outputbox" aria-label="With textarea">
+                {{ emailOut }}
+            </textarea>
+        </div>
+    </div>
+</div>    
 
 
 
