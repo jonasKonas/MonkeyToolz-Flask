@@ -1,6 +1,6 @@
-from flask import Flask, redirect, url_for, render_template, request
+from flask import Flask, render_template, request
 from compareJson import get_info
-from confGen import ciscoC,generateConfiguration
+from confGen import generateConfiguration, generateEmail
 
 app = Flask(__name__)
 
@@ -39,10 +39,11 @@ def buildOutput():
 
         
         confOut = generateConfiguration(supplier,ci_name,oper_s,customer_dir)
+        emailOut = generateEmail(project_manager,ci_name,supplier,part_number,pick_ref)
         
         
   
-        return render_template("buildc.html", confOut=confOut, ci_name=ci_name, supplier=supplier, oper_s=oper_s, part_number=part_number)
+        return render_template("buildc.html", confOut=confOut, emailOut=emailOut, ci_name=ci_name, supplier=supplier, oper_s=oper_s, part_number=part_number)
 
 
 

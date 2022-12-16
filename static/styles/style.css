@@ -5,39 +5,43 @@ body {
 .main{
     background-color: white;
 }
-
-.output-container{
-    padding: 3px;
-    background-color: white;
-}
-
 .outputbox{
     height: 25rem;
     width: 70%;
 }
-
 #nav-row{
     background-color: rgb(20, 192, 89);
 }
-
 .copy-span{
     padding: 0;
     border: none;
     align-items: stretch;
 
 }
-
-
-
 img {
     width: 50px;
 }
-
 #config-output{
-    font-size: 80%;
+    font-size: 14px;
     resize: none;
-    width: 50%;
+    width: 50px;
     background-color: rgb(242, 244, 240);
     color: rgb(34, 34, 34);
     border: none;
+}
+#email-output{
+    outline: none;
+    font-size: 14px;
+    width: 100px;
+    resize: none;
+    width: 20%;
+    background-color: rgb(242, 244, 240);
+    color: rgb(34, 34, 34);
+    border: none;
+}
+.output-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px;
+    background-color: white;
 }

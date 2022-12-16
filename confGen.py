@@ -4,6 +4,8 @@ ftpServerIp = "192.168.1.1"
 #o - OS file name
 #d - directory of the config file
 
+
+
 def ciscoC(c,o,d):
     ipAdd = "enable\nconfigure terminal\ninterface vlan 1\nip address dhcp\nno shutdown\nend\ndir\ndel flash:\n\n"
     osDownload = f"copy tftp://{ftpServerIp}/{o} flash:\n"
@@ -28,6 +30,15 @@ def generateConfiguration(s,c,o,d):
     else:
         error_msg = "Config is not in the database"
         return error_msg
-    
 
+#p - PM name
+#c - CI_name   
+#s - supplier
+#r = part code
+#k - pick ref
+ 
+def generateEmail(p,c,s,r,k):
+    device = f"{s} {r}"
+    email = f"\n\nHi {p},\n\nThe following has been configured, boxed, and placed on the shipping shelf:\n\n{c}\n{device}\n{k}\n\nKind regards,\n"
+    return email
 #def oneAccessC(c,o,d):
